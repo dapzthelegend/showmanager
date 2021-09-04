@@ -1,0 +1,9 @@
+mutation AddShow($input: CreateMovieInput!){
+    createMovie(input: $input){
+        movie{
+            releaseDate
+            title
+        }
+        clientMutationId
+    }
+}

@@ -1,0 +1,20 @@
+query ShowsList($cursor: String){
+  movies(after: $cursor, order: [createdAt_DESC]){
+    count
+    edges{
+      node{
+        id
+        createdAt
+        title
+        releaseDate
+        seasons
+      }
+    }
+    pageInfo{
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+  }
+}

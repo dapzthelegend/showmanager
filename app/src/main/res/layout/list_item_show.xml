@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="show"
+            type="com.example.showmanager.core.network.model.Show" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginBottom="@dimen/default_margin">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/list_item_show_height">
+
+            <ImageView
+                android:id="@+id/trip_imageview"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/circular_background"
+                android:src="@drawable/ic_baseline_live_tv_24"
+                app:tint="@color/primary"
+                android:padding="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/trip_initial_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.Body"
+                app:layout_constraintTop_toTopOf="@id/trip_imageview"
+                app:layout_constraintStart_toEndOf="@id/trip_imageview"
+                android:layout_marginStart="@dimen/default_margin"
+                android:textSize="@dimen/text_size_small"
+                android:text="@{show.title}"
+                tools:text="One Piece" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/trip_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.Body"
+                app:layout_constraintTop_toBottomOf="@id/trip_initial_location"
+                app:layout_constraintStart_toEndOf="@id/trip_imageview"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/list_item_seasons_margin_top"
+                android:textSize="@dimen/text_size_small"
+                android:text="@{show.seasons + ` seasons`}"
+                tools:text="11 seasons" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/trip_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/trip_imageview"
+                style="@style/TextAppearance.Body"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@{show.releaseDate}"
+                tools:text="July 2, 2021" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+</layout>

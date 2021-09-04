@@ -1,0 +1,110 @@
+ext {
+    //Kotlin
+    kotlin_version = "1.5.10"
+    //Hilt
+    hilt_version = "2.36"
+    //Google Services
+    google_services = "4.3.8"
+    //Firebase
+    firebase_crashlytics_gradle_version = "2.7.0"
+    //Nav Args
+    nav_args = "2.3.5"
+    //apollo
+    apollo_version = "3.0.0"
+
+
+    AndroidSdk = [
+            compileSdk: 30,
+            targetSdk : 30,
+            minSdk    : 21,
+            buildTools: "30.0.3"
+    ]
+
+    BuildPlugins = [
+            androidGradlePlugin: "com.android.tools.build:gradle:7.0.0",
+            kotlinGradlePlugin : "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version",
+            hiltGradlePlugin   : "com.google.dagger:hilt-android-gradle-plugin:$hilt_version",
+            androidApplication : "com.android.application",
+            kotlinAndroid      : "kotlin-android",
+            kotlinKapt         : "kotlin-kapt",
+            daggerHilt         : "dagger.hilt.android.plugin",
+            kotlinParcelize    : "kotlin-parcelize",
+            navArgs            : "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_args",
+            apollo             : "com.apollographql.apollo3"
+    ]
+
+    AndroidClient = [
+            appId      : "com.dapzthelegend.spacexodyssey",
+            versionCode: 1,
+            versionName: "1.0"
+    ]
+
+    LibrariesVersion = [
+            appCompat          : "1.2.0",
+            fragmentKtx        : "1.4.0-alpha06",
+            materialDesign     : "1.3.0",
+            androidCore        : "1.5.0",
+            constraintLayout   : "2.0.4",
+            room               : "2.2.6",
+            coroutines         : "1.5.0",
+            timber             : "4.7.1",
+            datastore          : "1.0.0",
+            lifeCycle          : "2.4.0-alpha01",
+            apollo             : "2.5.9",
+            logging            : "4.9.0",
+            loadingButton      : "1.7",
+            paging             : "3.0.0"
+
+
+    ]
+
+    Libraries = [
+            kotlinStd          : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
+            hilt               : "com.google.dagger:hilt-android:$hilt_version",
+            hiltCompiler       : "com.google.dagger:hilt-android-compiler:$hilt_version",
+            appCompat          : "androidx.appcompat:appcompat:$LibrariesVersion.appCompat",
+            fragmentKTX        : "androidx.fragment:fragment-ktx:$LibrariesVersion.fragmentKtx",
+            androidCore        : "androidx.core:core-ktx:$LibrariesVersion.androidCore",
+            materialDesign     : "com.google.android.material:material:$LibrariesVersion.materialDesign",
+            constraintLayout   : "androidx.constraintlayout:constraintlayout:$LibrariesVersion.constraintLayout",
+            coroutinesAndroid  : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$LibrariesVersion.coroutines",
+            timber             : "com.jakewharton.timber:timber:$LibrariesVersion.timber",
+            navArgsKtx         : "androidx.navigation:navigation-fragment-ktx:$nav_args",
+            navArgsUIKtx       : "androidx.navigation:navigation-ui-ktx:$nav_args",
+            lifecycleRuntime   : "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0-alpha01",
+            lifecycleViewModel : "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0-alpha01",
+            apolloRuntime      : "com.apollographql.apollo:apollo-runtime:$LibrariesVersion.apollo",
+            apolloCoroutines   : "com.apollographql.apollo:apollo-coroutines-support:$LibrariesVersion.apollo",
+            logging            : "com.squareup.okhttp3:logging-interceptor:$LibrariesVersion.logging",
+            loadingButton      : "com.github.koushikcse:LoadingButton:$LibrariesVersion.loadingButton",
+            paging             : "androidx.paging:paging-runtime-ktx:$LibrariesVersion.paging"
+
+    ]
+
+    TestLibrariesVersion = [
+            mockk       : "1.10.5",
+            robolectric : "4.5",
+            runner      : "1.3.0",
+            textCore    : "1.3.0",
+            jUnit       : "4.13.1",
+            androidX    : "1.1.2",
+            truth       : "1.1",
+            fragmentTest: "1.3.0",
+            androidArch : "2.1.0",
+            espresso    : "3.1.0"
+    ]
+
+    TestLibraries = [
+            testCore              : "androidx.test:core:$TestLibrariesVersion.textCore",
+            junit                 : "junit:junit:$TestLibrariesVersion.jUnit",
+            androidX              : "androidx.test.ext:junit:$TestLibrariesVersion.androidX",
+            truth                 : "com.google.truth:truth:$TestLibrariesVersion.truth",
+            archCore              : "androidx.arch.core:core-testing:$TestLibrariesVersion.androidArch",
+            coroutines            : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$LibrariesVersion.coroutines",
+            fragment              : "androidx.fragment:fragment-testing:$TestLibrariesVersion.fragmentTest",
+            mockk                 : "io.mockk:mockk:$TestLibrariesVersion.mockk",
+            testRunner            : "androidx.test:runner:$TestLibrariesVersion.runner",
+            robolectric           : "org.robolectric:robolectric:$TestLibrariesVersion.robolectric",
+           ]
+
+}

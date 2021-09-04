@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Show Manager</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="splash_logo">splash logo</string>
+    <string name="add_new_tv_show">Add new tv show</string>
+    <string name="logo_transition">logoTransition</string>
+    <string name="title_label_transition">titleLabelTransition</string>
+    <string name="show_list_of_added_shows">Show list of added shows</string>
+    <string name="show_manager">Show Manager</string>
+    <string name="tv_show">Tv Show</string>
+    <string name="seasons">Seasons</string>
+    <string name="release_date">Release Date</string>
+    <string name="add_show">Add Show</string>
+    <string name="add_new_show">Add New Show</string>
+    <string name="tv_show_list">Tv Show List</string>
+    <string name="error_on_fetching_more_shows">Error on Fetching More Shows</string>
+    <string name="retry">Retry</string>
+    <string name="you_have_no_tv_shows">You have no tv shows</string>
+    <string name="an_unknown_error_has_occurred">An unknown error has occurred!</string>
+</resources>

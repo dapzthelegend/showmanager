@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewState"
+            type="com.example.showmanager.features.showsList.ShowsListViewState" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:visible="@{viewState.isLoaded   || viewState.NoMoreElements}">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/shows_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:overScrollMode="never"
+            app:itemDecorationSpacing="@{@dimen/shows_list_item_padding}"
+            app:itemMargin="@{@dimen/shows_list_item_margin}"
+            tools:listitem="@layout/list_item_show" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewState"
+            type="com.example.showmanager.features.showsList.ShowsListViewState" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:visible="@{viewState.isLoading}">
+
+        <ProgressBar
+            android:layout_width="@dimen/shows_list_loading_size"
+            android:layout_height="@dimen/shows_list_loading_size"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+</layout>

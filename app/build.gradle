@@ -1,0 +1,125 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
+    id "com.apollographql.apollo" version "2.5.9"
+}
+
+android {
+    compileSdkVersion AndroidSdk.compileSdk
+    buildToolsVersion AndroidSdk.buildTools
+
+    defaultConfig {
+        applicationId AndroidClient.appId
+        minSdkVersion AndroidSdk.minSdk
+        targetSdkVersion AndroidSdk.targetSdk
+        versionCode AndroidClient.versionCode
+        versionName AndroidClient.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/*'
+    }
+}
+
+dependencies {
+
+    //core
+    implementation Libraries.kotlinStd
+    implementation Libraries.androidCore
+    implementation Libraries.fragmentKTX
+    implementation Libraries.appCompat
+    implementation Libraries.materialDesign
+    implementation Libraries.constraintLayout
+
+
+    //hilt for DI
+    implementation Libraries.hilt
+    implementation Libraries.lifecycleRuntime
+    implementation Libraries.lifecycleViewModel
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation 'androidx.annotation:annotation:1.2.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt Libraries.hiltCompiler
+
+
+    //coroutines
+    implementation Libraries.coroutinesAndroid
+
+    //Timber
+    implementation Libraries.timber
+
+
+    //NavArgs
+    implementation Libraries.navArgsKtx
+    implementation Libraries.navArgsUIKtx
+
+    //apollo
+    implementation Libraries.apolloRuntime
+    implementation Libraries.apolloCoroutines
+
+    //logging
+    implementation Libraries.logging
+
+    //loadingButton
+    implementation Libraries.loadingButton
+
+    //paging
+    implementation Libraries.paging
+
+
+
+    testImplementation TestLibraries.testCore
+    testImplementation TestLibraries.archCore
+    testImplementation TestLibraries.junit
+    testImplementation TestLibraries.androidX
+    testImplementation TestLibraries.truth
+    testImplementation TestLibraries.coroutines
+    testImplementation TestLibraries.mockk
+    testImplementation TestLibraries.testRunner
+    testImplementation TestLibraries.robolectric
+
+
+    androidTestImplementation TestLibraries.archCore
+    androidTestImplementation TestLibraries.junit
+    androidTestImplementation TestLibraries.androidX
+    androidTestImplementation TestLibraries.truth
+    androidTestImplementation TestLibraries.coroutines
+    androidTestImplementation TestLibraries.testRunner
+    androidTestImplementation 'com.willowtreeapps.assertk:assertk-jvm:0.23.1'
+
+
+    debugImplementation TestLibraries.fragment
+}
+
+apollo {
+    // instruct the compiler to generate Kotlin models
+    generateKotlinModels.set(true)
+}
+
+apply from: "../ktlint.gradle"
